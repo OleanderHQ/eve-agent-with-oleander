@@ -8,11 +8,11 @@ A minimal template for building an [`eve`](https://vercel.com/eve) agent using [
 
 ## Getting Started
 
-Click the "Deploy" button to clone this repo, create a new Vercel project, and set up an Eve agent connected to oleander:
+Click _Deploy_ to clone this repo and create a Vercel project with an eve agent connected to oleander:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOleanderHQ%2Feve-agent-with-oleander&project-name=eve-agent-with-oleander&repository-name=eve-agent-with-oleander)
 
-Once the process is complete, you can clone the newly created GitHub repository and start making changes locally.
+When it's done, clone the new GitHub repo and start building locally.
 
 ## Learn More
 
