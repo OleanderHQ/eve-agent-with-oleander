@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "skills": {
+    "lake-catalog": {
+      "source": "oleanderhq/skills",
+      "sourceType": "github",
+      "skillPath": "skills/lake-catalog/SKILL.md",
+      "computedHash": "16c683478117c9225108e167356cfe752a0fbddccf2c7eeb15f1e9821b36c164"
+    },
+    "lake-query": {
+      "source": "oleanderhq/skills",
+      "sourceType": "github",
+      "skillPath": "skills/lake-query/SKILL.md",
+      "computedHash": "789a5f8be495fef322badf4347ac0e9e095c474c1f21cff9270261dc0fd92387"
+    },
+    "polars-submit": {
+      "source": "oleanderhq/skills",
+      "sourceType": "github",
+      "skillPath": "skills/polars-submit/SKILL.md",
+      "computedHash": "19a0f7692014311bc5f10db527c34166a198e0c13b2edbd7ae2a319737006cc1"
+    },
+    "spark-best-practices": {
+      "source": "oleanderhq/skills",
+      "sourceType": "github",
+      "skillPath": "skills/spark-best-practices/SKILL.md",
+      "computedHash": "07da32b955e530f7ee4830c8cc0406d7fb897aba36c97ab05c2b864872ef6dcf"
+    },
+    "spark-lake-catalog": {
+      "source": "oleanderhq/skills",
+      "sourceType": "github",
+      "skillPath": "skills/spark-lake-catalog/SKILL.md",
+      "computedHash": "cb5253621f3604494ded7d0c0265ae258e28b4bf21663d0113c757efbc0b591d"
+    },
+    "spark-lineage": {
+      "source": "oleanderhq/skills",
+      "sourceType": "github",
+      "skillPath": "skills/spark-lineage/SKILL.md",
+      "computedHash": "de5a71a396958c25e9a983bd65775b323db33fd22b176dce9406783a80100e30"
+    },
+    "spark-submit": {
+      "source": "oleanderhq/skills",
+      "sourceType": "github",
+      "skillPath": "skills/spark-submit/SKILL.md",
+      "computedHash": "7aa6c6e96f228e9c3288732a3e2ec25a42dee147d1f2864207449404042017bf"
+    }
+  }
+}
