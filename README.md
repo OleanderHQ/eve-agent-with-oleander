@@ -2,9 +2,9 @@
   <img src="https://github.com/OleanderHQ/assets/raw/main/oleander_logo.png" alt="Oleander Logo" width="150" />
 </p>
 
-# Eve Agent with Oleander
+# Eve Agent with oleander
 
-A minimal template for building an Eve agent using [oleander](https://oleander.dev/), the agent-first data lake for querying, transforming, and running jobs without managing engines or infrastructure.
+A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/), a multi-engine data warehouse.
 
 ## Getting Started
 
