@@ -5,11 +5,15 @@
     "type": "module",
     "description": "A minimal template for building an eve agent backed by oleander's data layer.",
     "scripts": {
-      "dev": "eve dev",
-      "eval": "eve eval"
+        "dev": "eve dev",
+        "eval": "eve eval"
     },
     "dependencies": {
-      "eve": "latest",
-      "zod": "^3.23.0"
+        "@vercel/connect": "^0.4.1",
+        "eve": "latest",
+        "zod": "^3.23.0"
+    },
+    "devDependencies": {
+        "microsandbox": "^0.5.10"
     }
-  }
+}

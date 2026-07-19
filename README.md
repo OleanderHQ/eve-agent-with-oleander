@@ -21,17 +21,27 @@ When it's done, clone the new GitHub repo and start building locally.
    npm install
 ```
 
-2. Copy `.env.example` to `.env` and add your oleander API key:
+2. Wire up [Vercel Connect](https://vercel.com/docs/connect) for the oleander MCP ([eve warehouse tutorial](https://eve.dev/docs/tutorial/connect-a-warehouse); Connect is in private beta):
+```bash
+   vercel link
+   vercel connect create oleander.dev --name oleander
+   vercel connect attach oleander --yes
+   vercel env pull
+```
+
+   Use the connector UID printed by `create` in `agent/connections/oleander.ts` (`auth: connect("…")`) if it differs from `"oleander"`.
+
+3. Copy `.env.example` into `.env` if you still need local overrides (e.g. `AI_GATEWAY_API_KEY`):
 ```bash
    cp .env.example .env
 ```
 
-3. Start the agent:
+4. Start the agent:
 ```bash
    npm run dev
 ```
 
-4. Ask it something about your data:
+5. Ask it something about your data. The first oleander tool call will prompt you to sign in via the browser:
 ```text
    > What tables do I have access to, and how big is the largest one?
 ```
