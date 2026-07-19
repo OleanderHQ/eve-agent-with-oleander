@@ -4,7 +4,7 @@
 
 # Give Your Eve Agent a Multi-Engine Data Warehouse
 
-A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/), a multi-engine data warehouse. **Any query. Any size. Right engine.**
+A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). **Any query. Any size. Always the right engine.**
 
 ## Getting Started
 
@@ -14,11 +14,30 @@ Click _Deploy_ to clone this repo and create a Vercel project with an eve agent 
 
 When it's done, clone the new GitHub repo and start building locally.
 
-## Learn More
+## Try it locally
 
-To learn more about oleander, check out the documentation:
+1. Install dependencies:
+```bash
+   npm install
+```
+
+2. Copy `.env.example` to `.env` and add your oleander API key:
+```bash
+   cp .env.example .env
+```
+
+3. Start the agent:
+```bash
+   npm run dev
+```
+
+4. Ask it something about your data:
+```text
+   > What tables do I have access to, and how big is the largest one?
+```
+
+## Learn More
 
 - [Introduction](https://docs.oleander.dev/introduction) — what oleander is and how agents fit in the loop
 - [Coding with agents](https://docs.oleander.dev/mcp/introduction) — connect via MCP and CLI
 - [Skills](https://github.com/OleanderHQ/skills) — reusable agent skills for lake queries, Spark, and Polars
-- [oleander.dev](https://oleander.dev/) — product site and platform
