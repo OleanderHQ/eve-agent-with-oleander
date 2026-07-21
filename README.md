@@ -18,7 +18,7 @@ When it's done, clone the new GitHub repo and start building locally.
 
 1. Create an [oleander account](https://oleander.dev/account)
 
-2. Browse to [Vercel's marketplace](https://vercel.com/marketplace/oleander) to connect your account.
+2. Browse to [Vercel's marketplace](https://vercel.com/marketplace/oleander) to connect your oleander oleander.
 
 3. Install dependencies:
 ```bash
