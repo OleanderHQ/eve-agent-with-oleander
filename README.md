@@ -4,7 +4,7 @@
 
 # Give Your Eve Agent a Multi-Engine Data Warehouse
 
-A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). **Any query. Any size. Always the right engine.**
+A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
 ## Getting Started
 
@@ -16,32 +16,37 @@ When it's done, clone the new GitHub repo and start building locally.
 
 ## Try it locally
 
-1. Install dependencies:
+1. Create an [oleander account](https://oleander.dev/account)
+
+2. Browse to [Vercel's marketplace](https://vercel.com/marketplace/oleander) to connect your account.
+
+3. Install dependencies:
 ```bash
    npm install
 ```
 
-2. Wire up [Vercel Connect](https://vercel.com/docs/connect) for the oleander MCP ([eve warehouse tutorial](https://eve.dev/docs/tutorial/connect-a-warehouse); Connect is in private beta):
+4. Link Vercel:
 ```bash
    vercel link
+```
+
+5. Connect oleander's warehouse:
+```bash
    vercel connect create oleander.dev --name oleander
-   vercel connect attach oleander --yes
+   vercel connect attach oleander.dev/oleander --yes
+```
+
+6. Pull down your environment variables:
+```bash
    vercel env pull
 ```
 
-   Use the connector UID printed by `create` in `agent/connections/oleander.ts` (`auth: connect("…")`) if it differs from `"oleander"`.
-
-3. Copy `.env.example` into `.env` if you still need local overrides (e.g. `AI_GATEWAY_API_KEY`):
-```bash
-   cp .env.example .env
-```
-
-4. Start the agent:
+7. Start the agent:
 ```bash
    npm run dev
 ```
 
-5. Ask it something about your data. The first oleander tool call will prompt you to sign in via the browser:
+8. Ask it something about your data. The first oleander tool call will prompt you to sign in via the browser:
 ```text
    > What tables do I have access to, and how big is the largest one?
 ```
