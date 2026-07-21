@@ -1,5 +1,5 @@
 ---
-description: "Use lake-query to explore your data; compare seasonal revenue, analyze product changes, count new user signups, or find whatever answers are hidden in your data."
+description: "Routes lake SQL by scanned data size: lake_query (DuckDB) under 50 GB, spark_sql_submit at or above 50 GB. Use when querying oleander lake tables, exploring data, sizing partitions, or choosing between DuckDB and Spark SQL."
 ---
 # Lake Query
 

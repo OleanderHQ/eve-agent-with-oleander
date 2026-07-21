@@ -1,5 +1,5 @@
 ---
-description: "Run Polars queries or scripts on oleander, locally or distributed, and save results to the lake catalog."
+description: "Runs Polars queries or scripts on oleander via the CLI, in local or distributed mode, and saves results to the lake catalog. Use when writing Polars jobs, choosing query vs script mode, using --save / --distributed, or wiring scan()/params/result contracts."
 ---
 # Polars Submit
 

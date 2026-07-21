@@ -1,5 +1,5 @@
 ---
-description: "oleander-specific Spark guidance for connected OpenLineage, collect() pitfalls, and environment variable usage."
+description: "Preserves connected OpenLineage for oleander Spark jobs by avoiding collect()/toPandas() between read and write, and using env vars for runtime config. Use when lineage looks disconnected, jobs split after collect(), or rewriting Spark pipelines for continuous lineage."
 ---
 # oleander Spark Lineage
 
@@ -50,7 +50,3 @@ import os
 job_name = os.getenv("NAME", "default-service")
 output_catalog = os.getenv("OUTPUT_CATALOG", "oleander.sf")
 ```
-
-In this repo, `examples/print_name.py` uses:
-
-- `NAME` with fallback `default-service`

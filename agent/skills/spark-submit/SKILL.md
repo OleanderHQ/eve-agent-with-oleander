@@ -1,5 +1,5 @@
 ---
-description: "How to submit, monitor, and configure Spark jobs on oleander using MCP, the CLI, and the TypeScript SDK."
+description: "Submits, monitors, aborts, and configures Spark jobs on oleander via MCP (spark_jobs_submit), the CLI, and the TypeScript SDK. Use when uploading artifacts, running PySpark jobs, polling run state, or automating Spark workflows."
 ---
 # oleander Spark Submit
 

@@ -1,5 +1,5 @@
 ---
-description: "Spark-specific patterns for reading and writing oleander lake catalog tables, including append vs overwrite, avoiding driver writes, and reusable table naming."
+description: "Spark patterns for reading and writing oleander lake catalog tables: spark.table(), append vs overwrite, and avoiding driver-side writes. Use when building Spark jobs that read or write Iceberg tables in the oleander catalog."
 ---
 # oleander Spark Lake Catalog
 
