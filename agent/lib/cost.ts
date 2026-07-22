@@ -5,8 +5,12 @@
  */
 export const THRESHOLD_GB = 50;
 
-/** Illustrative: unfiltered scans are treated as expensive. */
+/** Illustrative: unfiltered SELECT scans are treated as expensive. */
 export function estimateScanGb(sql: string): number {
+  // DDL / writes aren't lake scans — skip the spend gate (e.g. init.sql).
+  if (/^\s*(CREATE|INSERT|DROP|ALTER|COPY|UPDATE|DELETE|TRUNCATE)\b/im.test(sql)) {
+    return 0;
+  }
   return /\bwhere\b/i.test(sql) ? 1 : 200;
 }
 

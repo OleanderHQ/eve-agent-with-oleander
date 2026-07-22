@@ -6,7 +6,7 @@
 
 A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
-This repo maps the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/query-sample-data) onto oleander: MCP warehouse connection instead of sql.js, lake seed via `init.sql`, sandbox schema + charts, glossary state, team playbooks, and cost-based query approval.
+Below, we follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
 
 ## Getting Started
 
@@ -43,17 +43,17 @@ When it's done, clone the new GitHub repo and start building locally.
    vercel env pull
 ```
 
-7. Start the agent:
+7. Start the eve agent:
 ```bash
    npm run dev
 ```
 
-8. Seed sample tables — the agent reads [`agent/sandbox/workspace/init.sql`](agent/sandbox/workspace/init.sql) (mounted at `/workspace/init.sql`) and runs it via oleander `lake_query`:
+8. Ask the agent to set up oleander's warehouse with sample data:
 ```text
-   > run init.sql
+   > Seed the oleander warehouse with sample data
 ```
 
-9. Demo prompts (sign in via the browser on the first oleander tool call if needed):
+9. Ask the agent about your sample data:
 ```text
    > Which customer has spent the most, and how much?
    > Plot total order revenue per customer.
@@ -61,26 +61,6 @@ When it's done, clone the new GitHub repo and start building locally.
    > How many active customers do we have?
    > Total revenue across all customers, all time, broken out by day.
 ```
-
-The last prompt should trip the cost approval gate (unfiltered scan heuristic). Approve in the TUI to continue.
-
-`chart_series` shells out to `python` + matplotlib in the sandbox. If the plot fails, install matplotlib in sandbox bootstrap or use a custom sandbox image — see [Eve Sandbox](https://eve.dev/docs/sandbox).
-
-### Layout (Eve capabilities → oleander)
-
-| Path | Eve tutorial step | Role |
-| --- | --- | --- |
-| `agent/connections/oleander.ts` | Connect a warehouse | Oleander MCP + spend `approval` |
-| `agent/sandbox/workspace/init.sql` | Query sample data (seed) | Seed SQL at `/workspace/init.sql` — say `run init.sql` |
-| `agent/sandbox/workspace/schema.sql` | Run analysis | Reference table shapes |
-| `agent/tools/chart_series.ts` | Run analysis | Sandbox matplotlib chart |
-| `agent/lib/glossary.ts` + `define_metric` / `recall_metrics` | Remember definitions | Session metric glossary |
-| `agent/skills/team-playbook.ts` | Team playbooks | Dynamic Growth/Finance skill |
-| `agent/channels/eve.ts` | Team playbooks | Dev-only `team: growth` stamp |
-| `agent/lib/cost.ts` | Guard the spend | Scan heuristic + heavy-tool gate |
-| `agent/skills/` (lake-*) | | Engine routing for real lake tables |
-
-There is no `agent/tools/run_sql.ts` — SQL goes through the oleander connection.
 
 ## Learn More
 
