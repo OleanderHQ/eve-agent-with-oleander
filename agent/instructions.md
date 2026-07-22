@@ -31,8 +31,17 @@ the sample database):
 
 ## Analysis and charts
 
-- Fetch numbers with oleander `lake_query`, then render charts **inline in chat**
-  as ASCII (bar/sparkline tables).
+- Fetch numbers with oleander `lake_query`, then render charts **inline in chat**.
+- **Always use ASCII only** (one horizontal bar or sparkline table). Never call a
+  chart/plot/image tool, even if one is available — do not attempt native charts
+  and do not "fall back" after a failed tool call.
+
+  ```
+  Customer  Revenue  Bar
+  ────────  ───────  ────
+  Globex    $99.00   ████████████████████
+  Acme      $57.00   ███████████▌
+  ```
 
 ## Metric definitions
 
