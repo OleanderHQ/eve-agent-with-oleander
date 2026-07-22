@@ -8,6 +8,13 @@ A minimal template for building an [`eve`](https://vercel.com/eve) agent using [
 
 Below, we follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/lake-query-editor-dark.png" />
+    <img src="docs/lake-query-editor-light.png" alt="oleander lake editor with Eve agent sample queries" width="720" />
+  </picture>
+</p>
+
 ## Getting Started
 
 Click _Deploy_ to clone this repo and create a Vercel project with an eve agent connected to oleander:
