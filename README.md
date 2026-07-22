@@ -6,7 +6,13 @@
 
 A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
-Below, we follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
+We follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
+
+# What Does Your Eve Agent Get with oleander?
+
+* **Multi-engine smart routing:** DuckDB, Spark, Polars, DataFusion. Picked automatically per query, based on size and cost history. No guessing.
+* **Fully-managed Iceberg catalog:** No cluster to provision, serverless compute, live in minutes.
+* **Cost and lineage on every query:** What ran? What did it cost? What changed? Tracked automatically by our context graph, powered by [`OpenLineage`](https://openlineage.io/).
 
 <p align="center">
   <picture>
