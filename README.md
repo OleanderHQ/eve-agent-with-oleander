@@ -6,6 +6,8 @@
 
 A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
+Below, we follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
+
 ## Getting Started
 
 Click _Deploy_ to clone this repo and create a Vercel project with an eve agent connected to oleander:
@@ -41,14 +43,23 @@ When it's done, clone the new GitHub repo and start building locally.
    vercel env pull
 ```
 
-7. Start the agent:
+7. Start the eve agent:
 ```bash
    npm run dev
 ```
 
-8. Ask it something about your data. The first oleander tool call will prompt you to sign in via the browser:
+8. Ask the agent to set up oleander's warehouse with sample data:
 ```text
-   > What tables do I have access to, and how big is the largest one?
+   > Seed the oleander warehouse with sample data
+```
+
+9. Ask the agent about your sample data:
+```text
+   > Which customer has spent the most, and how much?
+   > Plot total order revenue per customer.
+   > For us, an active customer is one with a purchase in the last 30 days. Remember that.
+   > How many active customers do we have?
+   > Total revenue across all customers, all time, broken out by day.
 ```
 
 ## Learn More
@@ -56,3 +67,4 @@ When it's done, clone the new GitHub repo and start building locally.
 - [Introduction](https://docs.oleander.dev/introduction) — what oleander is and how agents fit in the loop
 - [Coding with agents](https://docs.oleander.dev/mcp/introduction) — connect via MCP and CLI
 - [Skills](https://github.com/OleanderHQ/skills) — reusable agent skills for lake queries, Spark, and Polars
+- [Eve tutorial](https://eve.dev/docs/tutorial/connect-a-warehouse) — warehouse, analysis, glossary, playbooks, spend gate
