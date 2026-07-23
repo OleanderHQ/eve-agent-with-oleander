@@ -6,21 +6,13 @@
 
 A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
-We follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander. This template covers:
-
-- Connecting an eve agent to oleander via Vercel Connect / MCP
-- Seeding a sample Iceberg warehouse (`orders` / `customers`)
-- Querying with `lake_query` (and skills for catalog naming and engine choice)
-- Persisting metric definitions across turns (`define_metric` / `recall_metrics`)
-- Team playbooks for analysis conventions
-- Spend gates that require approval before unfiltered scans or Spark submits
-- Inline ASCII charts for query results
+We follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
 
 # What Does Your Eve Agent Get with oleander?
 
-* **Multi-engine smart routing:** DuckDB, Spark, Polars, DataFusion. Picked automatically per query, based on size and cost history. No guessing.
-* **Fully-managed Iceberg catalog:** No cluster to provision, serverless compute, live in minutes.
-* **Cost and lineage on every query:** What ran? What did it cost? What changed? Tracked automatically by our context graph, powered by [`OpenLineage`](https://openlineage.io/).
+* **Multi-engine smart routing** — DuckDB, Spark, Polars, DataFusion. Picked automatically per query, based on size and cost history. No guessing.
+* **Fully-managed Iceberg catalog** — No cluster to provision, serverless compute, live in minutes.
+* **Cost and lineage on every query** — What ran? What did it cost? What changed? Tracked automatically by our context graph, powered by [`OpenLineage`](https://openlineage.io/).
 
 <p align="center">
   <picture>
@@ -29,13 +21,16 @@ We follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-
   </picture>
 </p>
 
+## Prerequisites
+
+Before you deploy or run locally, you need an oleander account:
+
+1. Create an [oleander account](https://oleander.dev/account)
+2. Browse to [Vercel's marketplace](https://vercel.com/marketplace/oleander) to connect oleander
+
 ## Getting Started
 
-1. Create an [oleander account](https://oleander.dev/account).
-
-2. Browse to [Vercel's marketplace](https://vercel.com/marketplace/oleander) to connect your oleander account.
-
-3. Click _Deploy_ to clone this repo and create a Vercel project with an eve agent connected to oleander:
+Click _Deploy_ to clone this repo and create a Vercel project with an eve agent connected to oleander:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOleanderHQ%2Feve-agent-with-oleander&project-name=eve-agent-with-oleander&repository-name=eve-agent-with-oleander)
 
@@ -86,6 +81,6 @@ When it's done, clone the new GitHub repo and start building locally.
 ## Learn More
 
 - [Introduction](https://docs.oleander.dev/introduction) — what oleander is and how agents fit in the loop
-- [Coding with agents](https://docs.oleander.dev/mcp/introduction) — connect via MCP and CLI
+- [Coding with Agents](https://docs.oleander.dev/mcp/introduction) — connect via MCP and CLI
 - [Skills](https://github.com/OleanderHQ/skills) — reusable agent skills for lake queries, Spark, and Polars
-- [Eve tutorial](https://eve.dev/docs/tutorial/connect-a-warehouse) — warehouse, analysis, glossary, playbooks, spend gate
+- [Eve Tutorial](https://eve.dev/docs/tutorial/first-agent) — warehouse, analysis, glossary, playbooks, spend gate
