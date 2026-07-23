@@ -6,7 +6,15 @@
 
 A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
-We follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
+We follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander. This template covers:
+
+- Connecting an eve agent to oleander via Vercel Connect / MCP
+- Seeding a sample Iceberg warehouse (`orders` / `customers`)
+- Querying with `lake_query` (and skills for catalog naming and engine choice)
+- Persisting metric definitions across turns (`define_metric` / `recall_metrics`)
+- Team playbooks for analysis conventions
+- Spend gates that require approval before unfiltered scans or Spark submits
+- Inline ASCII charts for query results
 
 # What Does Your Eve Agent Get with oleander?
 
@@ -23,50 +31,50 @@ We follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-
 
 ## Getting Started
 
-Click _Deploy_ to clone this repo and create a Vercel project with an eve agent connected to oleander:
+1. Create an [oleander account](https://oleander.dev/account).
+
+2. Browse to [Vercel's marketplace](https://vercel.com/marketplace/oleander) to connect your oleander account.
+
+3. Click _Deploy_ to clone this repo and create a Vercel project with an eve agent connected to oleander:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOleanderHQ%2Feve-agent-with-oleander&project-name=eve-agent-with-oleander&repository-name=eve-agent-with-oleander)
 
 When it's done, clone the new GitHub repo and start building locally.
 
-## Try it locally
+## Try it Locally
 
-1. Create an [oleander account](https://oleander.dev/account)
-
-2. Browse to [Vercel's marketplace](https://vercel.com/marketplace/oleander) to connect your oleander oleander.
-
-3. Install dependencies:
+1. Install dependencies:
 ```bash
    npm install
 ```
 
-4. Link Vercel:
+2. Link Vercel:
 ```bash
    vercel link
 ```
 
-5. Connect oleander's warehouse:
+3. Connect oleander's warehouse:
 ```bash
    vercel connect create oleander.dev --name oleander
    vercel connect attach oleander.dev/oleander --yes
 ```
 
-6. Pull down your environment variables:
+4. Pull down your environment variables:
 ```bash
    vercel env pull
 ```
 
-7. Start the eve agent:
+5. Start the eve agent:
 ```bash
    npm run dev
 ```
 
-8. Ask the agent to set up oleander's warehouse with sample data:
+6. Ask the agent to set up oleander's warehouse with sample data:
 ```text
    > Seed the oleander warehouse with sample data
 ```
 
-9. Ask the agent about your sample data:
+7. Ask the agent about your sample data:
 ```text
    > Which customer has spent the most, and how much?
    > Plot total order revenue per customer.
