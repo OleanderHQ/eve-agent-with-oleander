@@ -1,9 +1,3 @@
--- Sample analytics tables for the Eve + oleander demo.
--- Analogue of https://eve.dev/docs/tutorial/query-sample-data (lake instead of sql.js).
--- Prompt: "Seed the oleander warehouse with sample data"
--- Run this whole file in one lake_query call (multi-statement).
--- DuckDB-Iceberg does not support CREATE OR REPLACE TABLE — use DROP + CREATE.
-
 CREATE SCHEMA IF NOT EXISTS oleander."eve_agent_with_oleander";
 
 DROP TABLE IF EXISTS oleander."eve_agent_with_oleander".orders;

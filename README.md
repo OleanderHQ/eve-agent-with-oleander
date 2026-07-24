@@ -72,10 +72,9 @@ When it's done, clone the new GitHub repo and start building locally.
 7. Ask the agent about your sample data:
 ```text
    > Which customer has spent the most, and how much?
-   > Plot total order revenue per customer.
    > For us, an active customer is one with a purchase in the last 30 days. Remember that.
    > How many active customers do we have?
-   > Total revenue across all customers, all time, broken out by day.
+   > What's a good way to measure week-over-week retention?
 ```
 
 ## Learn More
@@ -83,4 +82,4 @@ When it's done, clone the new GitHub repo and start building locally.
 - [Introduction](https://docs.oleander.dev/introduction) — what oleander is and how agents fit in the loop
 - [Coding with Agents](https://docs.oleander.dev/mcp/introduction) — connect via MCP and CLI
 - [Skills](https://github.com/OleanderHQ/skills) — reusable agent skills for lake queries, Spark, and Polars
-- [Eve Tutorial](https://eve.dev/docs/tutorial/first-agent) — warehouse, analysis, glossary, playbooks, spend gate
+- [Eve Tutorial](https://eve.dev/docs/tutorial/first-agent) — warehouse, analysis, glossary, playbooks

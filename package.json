@@ -9,6 +9,7 @@
         "eval": "eve eval"
     },
     "dependencies": {
+        "@oleanderhq/sdk": "^0.7.0",
         "@vercel/connect": "^0.4.1",
         "ai": "^7.0.34",
         "eve": "latest",
