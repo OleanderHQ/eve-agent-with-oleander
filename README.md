@@ -6,11 +6,24 @@
 
 A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
+```text
+  YOU                         EVE AGENT                    OLEANDER
+┌──────┐                   ┌────────────┐               ┌─────────────────────┐
+│ ask  │ ── prompt ──────► │ agent loop │ ── tool ────► │ lake catalog        │
+└──────┘                   │ skills     │    call       │                     │
+                           └────────────┘               │  multi-engine route │
+                                                        │   ┌─ DuckDB         │
+                                                        │   ├─ Spark          │
+                                                        │   ├─ Polars         │
+                                                        │   └─ DataFusion     │
+                                                        └─────────────────────┘
+```
+
 # What is Eve?
 
 [`eve`](https://vercel.com/eve) is a framework for building typed, deployable AI agents in TypeScript. An eve agent is just a directory, defining instructions and skills in markdown. A minimal agent needs an instructions file and optional runtime configuration:
 
-```
+```text
 my-agent/
 ├── package.json
 ├── agent/
