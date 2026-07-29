@@ -6,13 +6,29 @@
 
 A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
-We follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
+# What is Eve?
+
+[`eve`](https://vercel.com/eve) is a framework for building typed, deployable AI agents in TypeScript. An eve agent is just a directory, defining instructions and skills in markdown. A minimal agent needs an instructions file and optional runtime configuration:
+
+```
+my-agent/
+├── package.json
+├── agent/
+│   ├── agent.ts
+│   └── instructions.md
+└── evals/
+```
+
+`agent/instructions.md` is the agent's always-on system prompt. `agent/agent.ts` selects the model and configures runtime behavior. Add directories under `agent/` as you need them (for example `tools/`, `skills/`, `channels/`, `connections/`, and `sandbox/`) and eve discovers each capability from its path.
+
+See [Eve project structure](https://eve.dev/docs/project-structure) for the full layout. Below, we follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
+
 
 # What Does Your Eve Agent Get with oleander?
 
-* **Multi-engine smart routing** — DuckDB, Spark, Polars, DataFusion. Picked automatically per query, based on size and cost history. No guessing.
-* **Fully-managed Iceberg catalog** — No cluster to provision, serverless compute, live in minutes.
-* **Cost and lineage on every query** — What ran? What did it cost? What changed? Tracked automatically by our context graph, powered by [`OpenLineage`](https://openlineage.io/).
+* **Multi-engine smart routing**: DuckDB, Spark, Polars, DataFusion. Picked automatically per query, based on size and cost history. No guessing.
+* **Fully-managed Iceberg catalog**: No cluster to provision, serverless compute, live in minutes.
+* **Cost and lineage on every query**: What ran? What did it cost? What changed? Tracked automatically by our context graph, powered by [`OpenLineage`](https://openlineage.io/).
 
 <p align="center">
   <picture>
@@ -79,7 +95,7 @@ When it's done, clone the new GitHub repo and start building locally.
 
 ## Learn More
 
-- [Introduction](https://docs.oleander.dev/introduction) — what oleander is and how agents fit in the loop
-- [Coding with Agents](https://docs.oleander.dev/mcp/introduction) — connect via MCP and CLI
-- [Skills](https://github.com/OleanderHQ/skills) — reusable agent skills for lake queries, Spark, and Polars
-- [Eve Tutorial](https://eve.dev/docs/tutorial/first-agent) — warehouse, analysis, glossary, playbooks
+- [Introduction](https://docs.oleander.dev/introduction): what oleander is and how agents fit in the loop
+- [Coding with Agents](https://docs.oleander.dev/mcp/introduction): connect via MCP and CLI
+- [Skills](https://github.com/OleanderHQ/skills): reusable agent skills for lake queries, Spark, and Polars
+- [Eve Tutorial](https://eve.dev/docs/tutorial/first-agent): warehouse, analysis, glossary, playbooks
