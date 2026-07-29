@@ -24,12 +24,13 @@ A minimal template for building an [`eve`](https://vercel.com/eve) agent using [
 [`eve`](https://vercel.com/eve) is a framework for building typed, deployable AI agents in TypeScript. An eve agent is just a directory, defining instructions and skills in markdown. A minimal agent needs an instructions file and optional runtime configuration:
 
 ```text
-my-agent/
-├── package.json
+eve-agent-with-oleander/
 ├── agent/
-│   ├── agent.ts
-│   └── instructions.md
-└── evals/
+│   ├── agent.ts          # chooses the model, configures the runtime
+│   ├── instructions.md   # the always-on persona, read every turn
+│   └── channels/
+│       └── eve.ts        # the built-in HTTP channel, shipped with every app
+└── package.json
 ```
 
 `agent/instructions.md` is the agent's always-on system prompt. `agent/agent.ts` selects the model and configures runtime behavior. Add directories under `agent/` as you need them (for example `tools/`, `skills/`, `channels/`, `connections/`, and `sandbox/`) and eve discovers each capability from its path.
