@@ -1,10 +1,8 @@
-<p align="center">
-  <img src="https://github.com/OleanderHQ/assets/raw/main/oleander_logo.png" alt="Oleander Logo" width="150" />
-</p>
+
 
 # Give Your Eve Agent a Multi-Engine Data Warehouse
 
-A minimal template for building an [`eve`](https://vercel.com/eve) agent using [`oleander`](https://oleander.dev/). Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
+A minimal template for building an `[eve](https://vercel.com/eve)` agent using `[oleander](https://oleander.dev/)`. Give your agent its own multi-engine data warehouse. **Any query. Any size. Always the right engine.**
 
 ```text
   YOU                         EVE AGENT                    OLEANDER
@@ -19,9 +17,11 @@ A minimal template for building an [`eve`](https://vercel.com/eve) agent using [
                                                         └─────────────────────┘
 ```
 
+
+
 # What is Eve?
 
-[`eve`](https://vercel.com/eve) is a framework for building typed, deployable AI agents in TypeScript. An eve agent is just a directory, defining instructions and skills in markdown. A minimal agent needs an instructions file and optional runtime configuration:
+`[eve](https://vercel.com/eve)` is a framework for building typed, deployable AI agents in TypeScript. An eve agent is just a directory, defining instructions and skills in markdown. A minimal agent needs an instructions file and optional runtime configuration:
 
 ```text
 eve-agent-with-oleander/
@@ -37,19 +37,13 @@ eve-agent-with-oleander/
 
 See [Eve project structure](https://eve.dev/docs/project-structure) for the full layout. Below, we follow the [Eve Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) so you can get up and running with oleander.
 
-
 # What Does Your Eve Agent Get with oleander?
 
-* **Multi-engine smart routing**: DuckDB, Spark, Polars, DataFusion. Picked automatically per query, based on size and cost history. No guessing.
-* **Fully-managed Iceberg catalog**: No cluster to provision, serverless compute, live in minutes.
-* **Cost and lineage on every query**: What ran? What did it cost? What changed? Tracked automatically by our context graph, powered by [`OpenLineage`](https://openlineage.io/).
+- **Multi-engine smart routing**: DuckDB, Spark, Polars, DataFusion. Picked automatically per query, based on size and cost history. No guessing.
+- **Fully-managed Iceberg catalog**: No cluster to provision, serverless compute, live in minutes.
+- **Cost and lineage on every query**: What ran? What did it cost? What changed? Tracked automatically by our context graph, powered by `[OpenLineage](https://openlineage.io/)`.
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/lake-query-editor-dark.png" />
-    <img src="docs/lake-query-editor-light.png" alt="oleander lake editor with Eve agent sample queries" width="720" />
-  </picture>
-</p>
+
 
 ## Prerequisites
 
@@ -58,54 +52,99 @@ Before you deploy or run locally, you need an oleander account:
 1. Create an [oleander account](https://oleander.dev/account)
 2. Browse to [Vercel's marketplace](https://vercel.com/marketplace/oleander) to connect oleander
 
+
+
 ## Getting Started
 
-Click _Deploy_ to clone this repo and create a Vercel project with an eve agent connected to oleander:
+Click *Deploy* to clone this repo and create a Vercel project with an eve agent connected to oleander:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOleanderHQ%2Feve-agent-with-oleander&project-name=eve-agent-with-oleander&repository-name=eve-agent-with-oleander)
+[Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOleanderHQ%2Feve-agent-with-oleander&project-name=eve-agent-with-oleander&repository-name=eve-agent-with-oleander)
 
 When it's done, clone the new GitHub repo and start building locally.
 
 ## Try it Locally
 
-1. Install dependencies:
+1. Install the [oleander CLI](https://docs.oleander.dev/cli/introduction):
+```bash
+   brew install oleanderhq/tap/oleander-cli
+```
+
+2. Configure the CLI with an API key from [Settings > API keys](https://oleander.dev/app/settings/api-keys):
+```bash
+   oleander configure --api-key <YOUR_API_KEY>
+```
+
+3. Install dependencies:
 ```bash
    npm install
 ```
 
-2. Link Vercel:
+4. Link Vercel:
 ```bash
    vercel link
 ```
 
-3. Connect oleander's warehouse:
+5. Connect oleander's warehouse:
 ```bash
    vercel connect create oleander.dev --name oleander
    vercel connect attach oleander.dev/oleander --yes
 ```
 
-4. Pull down your environment variables:
+6. Pull down your environment variables:
 ```bash
    vercel env pull
 ```
 
-5. Start the eve agent:
+7. Create the sales tables:
+```bash
+   oleander query '
+CREATE SCHEMA IF NOT EXISTS oleander.sales;
+
+CREATE TABLE IF NOT EXISTS oleander.sales.leads (
+  lead_id         INTEGER,
+  created_at      DATE,
+  source          VARCHAR,
+  company_name    VARCHAR,
+  contact_name    VARCHAR,
+  contact_email   VARCHAR,
+  status          VARCHAR,
+  owner           VARCHAR,
+  icp_segment     VARCHAR,
+  converted_at    DATE,
+  lost_at         DATE
+);
+
+CREATE TABLE IF NOT EXISTS oleander.sales.activities (
+  activity_id     INTEGER,
+  lead_id         INTEGER,
+  activity_type   VARCHAR,
+  occurred_at     DATE,
+  rep             VARCHAR,
+  notes           VARCHAR
+);
+
+CREATE TABLE IF NOT EXISTS oleander.sales.status_history (
+  lead_id         INTEGER,
+  from_status     VARCHAR,
+  to_status       VARCHAR,
+  changed_at      DATE
+);
+'
+```
+
+8. Start the eve agent:
 ```bash
    npm run dev
 ```
 
-6. Ask the agent to set up oleander's warehouse with sample data:
+9. Ask the agent about the sales model (or load your own rows):
 ```text
-   > Seed the oleander warehouse with sample data
+   > Describe oleander.sales.leads and list the columns.
+   > How would you query stalled contacted leads using activities?
+   > How do you compute days from new to qualified with status_history?
 ```
 
-7. Ask the agent about your sample data:
-```text
-   > Which customer has spent the most, and how much?
-   > For us, an active customer is one with a purchase in the last 30 days. Remember that.
-   > How many active customers do we have?
-   > What's a good way to measure week-over-week retention?
-```
+
 
 ## Learn More
 
@@ -113,3 +152,4 @@ When it's done, clone the new GitHub repo and start building locally.
 - [Coding with Agents](https://docs.oleander.dev/mcp/introduction): connect via MCP and CLI
 - [Skills](https://github.com/OleanderHQ/skills): reusable agent skills for lake queries, Spark, and Polars
 - [Eve Tutorial](https://eve.dev/docs/tutorial/first-agent): warehouse, analysis, glossary, playbooks
+
