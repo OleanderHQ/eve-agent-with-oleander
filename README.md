@@ -64,35 +64,35 @@ When it's done, clone the new GitHub repo and start building locally.
 
 ## Try it Locally
 
-1. Install the [oleander CLI](https://docs.oleander.dev/cli/introduction):
-```bash
-   brew install oleanderhq/tap/oleander-cli
-```
-
-2. Configure the CLI with an API key from [Settings > API keys](https://oleander.dev/app/settings/api-keys):
-```bash
-   oleander configure --api-key <YOUR_API_KEY>
-```
-
-3. Install dependencies:
+1. Install dependencies:
 ```bash
    npm install
 ```
 
-4. Link Vercel:
+2. Link Vercel:
 ```bash
    vercel link
 ```
 
-5. Connect oleander's warehouse:
+3. Connect oleander's warehouse:
 ```bash
    vercel connect create oleander.dev --name oleander
    vercel connect attach oleander.dev/oleander --yes
 ```
 
-6. Pull down your environment variables:
+4. Pull down your environment variables:
 ```bash
    vercel env pull
+```
+
+5. Install the [oleander CLI](https://docs.oleander.dev/cli/introduction):
+```bash
+   brew install oleanderhq/tap/oleander-cli
+```
+
+6. Configure the CLI with an API key from [Settings > API keys](https://oleander.dev/app/settings/api-keys):
+```bash
+   oleander configure --api-key <YOUR_API_KEY>
 ```
 
 7. Create the sales tables:
