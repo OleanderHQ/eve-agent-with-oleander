@@ -39,9 +39,12 @@ See [Eve project structure](https://eve.dev/docs/project-structure) for the full
 
 # What Does Your Eve Agent Get with oleander?
 
-- **Multi-engine smart routing**: DuckDB, Spark, Polars, DataFusion. Picked automatically per query, based on size and cost history. No guessing.
-- **Fully-managed Iceberg catalog**: No cluster to provision, serverless compute, live in minutes.
-- **Cost and lineage on every query**: What ran? What did it cost? What changed? Tracked automatically by our context graph, powered by `[OpenLineage](https://openlineage.io/)`.
+* **Universal data access.** Query Iceberg tables, cloud data warehouses, and operational databases through a single MCP server without knowing where the data lives.
+* **Intelligent query execution.** Every query is automatically routed to the optimal engine—DuckDB, Spark, Polars, or DataFusion—based on data size, historical performance, and cost.
+* **Managed analytics infrastructure.**  Launch a fully managed Iceberg warehouse in minutes, or connect your existing Iceberg catalogs and databases.
+* **Trusted, explainable answers.**  Every response includes automatic lineage, execution history, and cost tracking through oleander’s context graph, powered by [OpenLineage](https://openlineage.io/).
+* **Cost optimization by default.** Continuously reduce compute costs by running each workload on the most efficient execution engine. No manual tuning required.
+* **Built for AI agents.** MCP-native from day one, giving eve a governed, scalable, and production-ready interface to enterprise data.
 
 
 
