@@ -1,4 +1,7 @@
 
+<p align="center">
+  <img src="https://github.com/OleanderHQ/assets/raw/main/oleander_logo.png" alt="Oleander Logo" width="150" />
+</p>
 
 # Give Your Eve Agent a Multi-Engine Data Warehouse
 
@@ -46,7 +49,12 @@ See [Eve project structure](https://eve.dev/docs/project-structure) for the full
 * **Cost optimization by default.** Continuously reduce compute costs by running each workload on the most efficient execution engine. No manual tuning required.
 * **Built for AI agents.** MCP-native from day one, giving eve a governed, scalable, and production-ready interface to enterprise data.
 
-
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/lake-query-editor-dark.png" />
+    <img src="docs/lake-query-editor-light.png" alt="oleander lake editor with Eve agent sample queries" width="720" />
+  </picture>
+</p>
 
 ## Prerequisites
 
@@ -88,63 +96,20 @@ When it's done, clone the new GitHub repo and start building locally.
    vercel env pull
 ```
 
-5. Install the [oleander CLI](https://docs.oleander.dev/cli/introduction):
-```bash
-   brew install oleanderhq/tap/oleander-cli
-```
-
-6. Configure the CLI with an API key from [Settings > API keys](https://oleander.dev/app/settings/api-keys):
-```bash
-   oleander configure --api-key <YOUR_API_KEY>
-```
-
-7. Create the sales tables:
-```bash
-   oleander query '
-CREATE SCHEMA IF NOT EXISTS oleander.sales;
-
-CREATE TABLE IF NOT EXISTS oleander.sales.leads (
-  lead_id         INTEGER,
-  created_at      DATE,
-  source          VARCHAR,
-  company_name    VARCHAR,
-  contact_name    VARCHAR,
-  contact_email   VARCHAR,
-  status          VARCHAR,
-  owner           VARCHAR,
-  icp_segment     VARCHAR,
-  converted_at    DATE,
-  lost_at         DATE
-);
-
-CREATE TABLE IF NOT EXISTS oleander.sales.activities (
-  activity_id     INTEGER,
-  lead_id         INTEGER,
-  activity_type   VARCHAR,
-  occurred_at     DATE,
-  rep             VARCHAR,
-  notes           VARCHAR
-);
-
-CREATE TABLE IF NOT EXISTS oleander.sales.status_history (
-  lead_id         INTEGER,
-  from_status     VARCHAR,
-  to_status       VARCHAR,
-  changed_at      DATE
-);
-'
-```
-
-8. Start the eve agent:
+5. Start the eve agent:
 ```bash
    npm run dev
 ```
 
-9. Ask the agent about the sales model (or load your own rows):
+6. Ask the agent about your data:
 ```text
-   > Describe oleander.sales.leads and list the columns.
-   > How would you query stalled contacted leads using activities?
-   > How do you compute days from new to qualified with status_history?
+   > Load the NYC Taxi dataset into my warehouse.
+   > What datasets do I have?
+   > Describe the taxi.trips table.
+   > Show me the busiest pickup locations.
+   > Which neighborhoods generate the most revenue?
+   > Rank every taxi zone by revenue over the past five years.
+   > Why did you choose that engine?
 ```
 
 
@@ -154,5 +119,5 @@ CREATE TABLE IF NOT EXISTS oleander.sales.status_history (
 - [Introduction](https://docs.oleander.dev/introduction): what oleander is and how agents fit in the loop
 - [Coding with Agents](https://docs.oleander.dev/mcp/introduction): connect via MCP and CLI
 - [Skills](https://github.com/OleanderHQ/skills): reusable agent skills for lake queries, Spark, and Polars
-- [Eve Tutorial](https://eve.dev/docs/tutorial/first-agent): warehouse, analysis, glossary, playbooks
+- [Eve Tutorial](https://eve.dev/docs/tutorial/first-agent): warehouse, analysis, and more
 
