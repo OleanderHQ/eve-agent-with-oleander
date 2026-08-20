@@ -5,13 +5,13 @@
       "source": "oleanderhq/skills",
       "sourceType": "github",
       "skillPath": "skills/lake-catalog/SKILL.md",
-      "computedHash": "76a6421fbda9a090004e50e965972c40eb1d8fcd27342609dd2badb2787ac2e4"
+      "computedHash": "25f98971bcb4afacb74d3f61548db16c67e07bd313e6b4e89a2a1ab8cdc53a50"
     },
     "lake-query": {
       "source": "oleanderhq/skills",
       "sourceType": "github",
       "skillPath": "skills/lake-query/SKILL.md",
-      "computedHash": "a9b53c02bf9a4fbfc899d240091488e31fbb9f82513dfa98bf4e6e28c23d0b2c"
+      "computedHash": "65ea384f8f7e4ada370aa09379612419497dde9a3f5ea2e4745b295b6a48abc7"
     },
     "polars-submit": {
       "source": "oleanderhq/skills",
@@ -41,7 +41,7 @@
       "source": "oleanderhq/skills",
       "sourceType": "github",
       "skillPath": "skills/spark-submit/SKILL.md",
-      "computedHash": "860df6e6b608c7a7407f665695bb36df5ae1ac2286987fabdb21f087b19cbd97"
+      "computedHash": "66b79a28bce97d3c1d0bee0e85b54362efb05ac42cce0f2de2180017fc13fb6d"
     }
   }
 }

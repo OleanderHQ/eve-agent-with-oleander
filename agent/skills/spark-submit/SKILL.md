@@ -11,8 +11,10 @@ Use these tools when working through the oleander MCP server (Claude Code,
 Cursor, etc.). Tool names are underscore-delimited — for example
 `spark_jobs_submit`, not `spark.jobs.submit` or `oleander_submit_spark_job`.
 
-For Spark **SQL** jobs that write to a table, use `spark_sql_submit` instead
-(see the `lake-query` skill).
+For **SQL** that writes to a table, use `query_submit`, which routes the
+query and sizes compute automatically. Use `spark_sql_submit` only when the
+run needs a durable job name or explicit machine types. See the `lake-query`
+skill.
 
 ### Artifacts
 
