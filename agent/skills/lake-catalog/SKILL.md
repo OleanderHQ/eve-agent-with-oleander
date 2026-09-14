@@ -1,5 +1,9 @@
 ---
-description: "Engine-agnostic oleander lake catalog conventions: catalog.namespace.table naming, hierarchy, and catalog-qualified reads/writes without raw storage paths. Use when naming tables, choosing namespaces, or referencing the lake catalog from Spark, Polars, SQL, or another engine."
+name: lake-catalog
+description: "Engine-agnostic oleander lake catalog conventions:
+  catalog.namespace.table naming, hierarchy, and catalog-qualified reads/writes
+  without raw storage paths. Use when naming tables, choosing namespaces, or
+  referencing the lake catalog from Spark, Polars, SQL, or another engine."
 ---
 # oleander Lake Catalog
 

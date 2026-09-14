@@ -1,5 +1,9 @@
 ---
-description: "Runs lake SQL through oleander's query router: query_run for reads, query_submit for writes, spark_sql_submit for named Spark jobs. Use when querying oleander lake tables, exploring data, writing query results to a table, or handling engine routing and billing errors."
+name: lake-query
+description: "Runs lake SQL through oleander's query router: query_run for
+  reads, query_submit for writes, spark_sql_submit for named Spark jobs. Use
+  when querying oleander lake tables, exploring data, writing query results to a
+  table, or handling engine routing and billing errors."
 ---
 # Lake Query
 
