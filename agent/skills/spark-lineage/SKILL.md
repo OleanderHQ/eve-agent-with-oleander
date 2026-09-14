@@ -1,5 +1,9 @@
 ---
-description: "Preserves connected OpenLineage for oleander Spark jobs by avoiding collect()/toPandas() between read and write, and using env vars for runtime config. Use when lineage looks disconnected, jobs split after collect(), or rewriting Spark pipelines for continuous lineage."
+name: spark-lineage
+description: Preserves connected OpenLineage for oleander Spark jobs by avoiding
+  collect()/toPandas() between read and write, and using env vars for runtime
+  config. Use when lineage looks disconnected, jobs split after collect(), or
+  rewriting Spark pipelines for continuous lineage.
 ---
 # oleander Spark Lineage
 

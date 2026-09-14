@@ -1,5 +1,9 @@
 ---
-description: "General Apache Spark best practices for scalable, maintainable DataFrame jobs: avoid driver materialization, reduce shuffle, join efficiently, and cache carefully. Use when optimizing Spark performance, reviewing PySpark jobs, or writing new DataFrame pipelines."
+name: spark-best-practices
+description: "General Apache Spark best practices for scalable, maintainable
+  DataFrame jobs: avoid driver materialization, reduce shuffle, join
+  efficiently, and cache carefully. Use when optimizing Spark performance,
+  reviewing PySpark jobs, or writing new DataFrame pipelines."
 ---
 # Spark Best Practices
 
